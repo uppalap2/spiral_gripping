@@ -8,7 +8,7 @@ clear all
 % for 22 psi 23.0827 43.0181
 % the above are different test cases it is in following order
 % pressure curvature torsion
-pressure   = 16; % in psi
+pressure   = 18; % in psi
 curvature  = 13.0044;
 torsion    = 25.4410;
 L          = 57e-2;
