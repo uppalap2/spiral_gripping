@@ -8,13 +8,13 @@ clear all
 % for 22 psi 23.0827 43.0181
 % the above are different test cases it is in following order
 % pressure curvature torsion
-pressure   = 18; % in psi
-curvature  = 13.0044;
-torsion    = 25.4410;
+pressure   = 10; % in psi
+curvature  = 6.7034;
+torsion    = 13.5069;
 L          = 57e-2;
 gravity_on = 1;
-n_t_1      = 101;%51 for < 20 % 61 for 20
-n_f        = 41;%31 for < 20 % 61 for 20
+n_t_1      = 61;%51 for < 20 % 61 for 20
+n_f        = 31;%31 for < 20 % 61 for 20
 % r_cyl      =  1.3e-2+.0048;
 r_cyl      =  1.3e-2;
 
