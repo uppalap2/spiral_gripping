@@ -11,7 +11,7 @@ clear all
 % the above are different test cases it is in following order
 % pressure curvature torsion
 
-L = 25e-2;
+L = 60e-2;
 for i = 1:length(L)
 pressure   = 16; % in psi
 curvature  = 13.0044;
@@ -39,7 +39,7 @@ TangVec = angle_detect(a);
 
 CylCurv(i) = a(end,13)/(sind(TangVec(end)))^2;
 
-MinActGrasp(i) = 1.5*pi*CylCurv^(-1)/sind(mean(TangVec));
+MinActGrasp(i) = 5/2*pi*CylCurv^(-1)/sind(mean(TangVec));
 
 [L(i) CylCurv(i) MinActGrasp(i)]
 % pause
