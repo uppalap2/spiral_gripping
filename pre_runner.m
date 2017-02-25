@@ -11,7 +11,7 @@ clear all
 % the above are different test cases it is in following order
 % pressure curvature torsion
 pressure = [10:2:22];
-L = [25e-2];
+L = [50e-2];
 curvature = [6.7034 8.9947 10.7905 13.0044 15.3885 18.1132 23.0827];
 torsion = [13.5069 17.1582 20.8017 25.4410 29.7957 34.9487 43.0181];
 for i = 1:length(curvature)
@@ -48,3 +48,6 @@ MinActGrasp = 5/2*pi*CylCurv^(-1)/sind(mean(TangVec));
 result(i,:) = [L pressure(i) 1/CylCurv MinActGrasp]
 % pause
 end
+
+result_50 = result;
+save result_50cm.mat result_50
