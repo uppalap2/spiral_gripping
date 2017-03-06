@@ -18,7 +18,7 @@ end
 
 %initial lambda1,lambda2,delta condition
 x0=[1 1 0];
-options=optimoptions('fsolve','Display','iter','MaxFunEvals',100000,'MaxIter',100000);
+options=optimoptions('fsolve','Display','off','MaxFunEvals',100000,'MaxIter',100000);
 
 x = fsolve(@(x)finallambda(x,alpha,beta,l,r,vfrac),x0,options);
 % [x] = fsolve(@(x)maxl1(x,alpha,beta,l,r),x0,options);
