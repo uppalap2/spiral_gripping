@@ -72,7 +72,7 @@ Pvslambda =  lambda1.^(-3).*(C2.*(0.645074E1+(-0.168523E-4).*lambda1.^12+ ...
   lambda1.^2+(-0.461855E-1).*((2+lambda1.^2.*((-1)+cos((1/18).*pi))) ...
   .*(2+lambda1.^2.*((-1)+sin((13/90).*pi)))).^(1/2)).^(-2);
 plot(-Pvslambda*145.08,lambda1,'g','linewidth',2)
-Material_fit = [-Pvslambda*145.08 lambda1];
+Material_fit = [-Pvslambda'*145.08 lambda1'];
 save('Material_fit_6088.mat','Material_fit');
     otherwise
         disp('enter 1 for actual angles, and 2 for corrected angles')
