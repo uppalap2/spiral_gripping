@@ -35,8 +35,8 @@ Pvslambda =  lambda1.^(-3).*(0.169803E3+(-0.1E1).*lambda1.^2+(-0.131042E2).*(4+ 
   lambda1.^2+0.582345E-2.*lambda1.^4).^(1/2))));
 plot(Pvslambda*145.08,lambda1,'g','linewidth',2)
 hold on
-% Material_fit = [-Pvslambda'*145.08 lambda1'];
-% save('Material_fit_6088.mat','Material_fit');
+ Material_fit = [Pvslambda'*145.08 lambda1'];
+ save('Material_fit_5088.mat','Material_fit');
 
 
 
