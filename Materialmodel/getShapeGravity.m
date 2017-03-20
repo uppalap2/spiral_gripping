@@ -1,15 +1,14 @@
-clear all%
- clc
-
-
+function initial_shape = getShapeGravity(pressure, alpha , beta,fitmatFile,L)
+% fit file is a string with .mat extension
+% alpha and beta in radians, L in meters
 % pressure curvature torsion
-pressure   = 18; % in psi
+% pressure   = 18; % in psi
 
-alpha = 85*pi/180; beta = 58*pi/180;
+% alpha = 85*pi/180; beta = 58*pi/180;
 
 option = 1; % 1 for shape with gravity and 2 for grasping around a object
 
-L          = 45e-2;
+% L          = 45e-2;
 gravity_on = 1;
 n_t_1      = 61;%51 for < 20 % 61 for 20
 n_f        = 61;%31 for < 20 % 61 for 20
@@ -19,8 +18,9 @@ Ro = 13/64*.0254;
 Ri = 3/16*.0254;
 
 
-load Material_fit_5088.mat
-Eb = 6*.6029e6; % 50 88  (.6134) for 60 88 (.4386) for 70,88
+% load Material_fit_5088.mat
+load(fitmatFile)
+Eb = 6*.4386e6; %  (.6134) for 60 88 (.4386) for 70,88 (.6029) 50,88
 
 lambda1 = interp1(Material_fit(:,1),Material_fit(:,2),pressure);
 delta = L.*Ro.^(-1).*cos(alpha).^3.*cos(beta).^3.*csc(alpha+(-1).*beta) ...
@@ -37,7 +37,7 @@ torsion = delta/L;
 
 tic
                      
-[a,b,initial_shape,d,e]  = getShape(curvature,... % e only for cons3 function
+[~,~,initial_shape,~,~]  = getShape(curvature,... % e only for cons3 function
                        torsion,Eb,...
                        L,...
                        gravity_on,...
@@ -47,13 +47,13 @@ tic
                    
 toc
 
-plot3(initial_shape(:,1),initial_shape(:,2),initial_shape(:,3),'r')
-grid on
- axis equal
- xlabel 'X'
- ylabel 'Y'
- zlabel 'Z'
- set(gca,'FontWeight','bold')
+% plot3(initial_shape(:,1),initial_shape(:,2),initial_shape(:,3),'r')
+% grid on
+%  axis equal
+%  xlabel 'X'
+%  ylabel 'Y'
+%  zlabel 'Z'
+%  set(gca,'FontWeight','bold')
 
 
 
