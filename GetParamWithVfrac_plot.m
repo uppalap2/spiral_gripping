@@ -1,7 +1,7 @@
 % Plot file for volume frac versus lambda1 and torsion(i.e delta/l)
 close all
-alpha = 88;
-beta = 65;
+alpha = 87;
+beta = 66;
 l = .159;
 r = .0048;
 
@@ -38,5 +38,5 @@ grid on
 % for 22 psi 23.0827 43.0181
 
 % plot(10:2:22,[6.7034 8.9947 10.7905 13.0044 15.3885 18.1132 23.0827],'g-')
-
+figure
 boxplot(params_changed(2:end,4)./params_changed(2:end,2))
