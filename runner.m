@@ -1,4 +1,4 @@
-clear all
+% clear all
 % clc
 
 % for 10 psi 6.7034 13.5069
@@ -9,8 +9,8 @@ clear all
 % the above are different test cases it is in following order
 % pressure curvature torsion
 pressure   = 12; % in psi
-curvature  = 8.9947;
-torsion    = 17.1582;
+curvature  = 14;
+torsion    = 22;
 L          = 57e-2;
 gravity_on = 1;
 n_t_1      = 61;%51 for < 20 % 61 for 20
