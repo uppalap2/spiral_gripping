@@ -1,4 +1,4 @@
-function initial_shape = getShapeGravity(pressure, alpha , beta,fitmatFile,L)
+function initial_shape = getShapeGravity(pressure, alpha , beta,fitmatFile,L,Eb,WpL)
 % fit file is a string with .mat extension
 % alpha and beta in radians, L in meters
 % pressure curvature torsion
@@ -20,7 +20,7 @@ Ri = 3/16*.0254;
 
 % load Material_fit_5088.mat
 load(fitmatFile)
-Eb = 6*.4386e6; %  (.6134) for 60 88 (.4386) for 70,88 (.6029) 50,88
+% Eb = 6*.4386e6; %  (.6134) for 60 88 (.4386) for 70,88 (.6029) 50,88
 
 lambda1 = interp1(Material_fit(:,1),Material_fit(:,2),pressure);
 delta = L.*Ro.^(-1).*cos(alpha).^3.*cos(beta).^3.*csc(alpha+(-1).*beta) ...
@@ -38,7 +38,7 @@ torsion = delta/L;
 tic
                      
 [~,~,initial_shape,~,~]  = getShape(curvature,... % e only for cons3 function
-                       torsion,Eb,...
+                       torsion,Eb,WpL,...
                        L,...
                        gravity_on,...
                        n_t_1,...

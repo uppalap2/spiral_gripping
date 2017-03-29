@@ -1,8 +1,8 @@
+% close all
 
+lambda1 = [1.000:.01:1.4];
 
-lambda1 = [1.000:.01:1.5];
-
-for n = 1:2
+for n = 2
 
 switch n
     case 1
@@ -36,8 +36,8 @@ Pvslambda = lambda1.^(-3).*(C2.*(0.113499E9+(-0.925926E0).*lambda1.^12+ ...
   1/45).*pi)))).^(1/2)).^(-1).*(0.412518E3+(-0.1E1).*lambda1.^2+( ...
   -0.202612E2).*((-1).*((-4)+lambda1.^2).*(2+lambda1.^2.*((-1)+cos(( ...
   1/45).*pi)))).^(1/2)).^(-2);
-plot(-Pvslambda*145.08,lambda1,'r','linewidth',2)
-hold on
+% plot(-Pvslambda*145.08,lambda1,'r','linewidth',2)
+% hold on
 
     case 2
         C1 = 0.613441350420766 ; C2 =  0.000000002169605;% for corrected
@@ -90,11 +90,14 @@ lambda1_exp =  [1
     1.2200
     1.3000
     1.4000]';
-plot(P_exp,lambda1_exp,'bo:','linewidth',2)
-h = legend('88,60 degrees fit','Corrected angles (85,58)','Experimental');
-h.FontSize = 10;
+plot(P_exp,lambda1_exp,'go:','linewidth',2)
+% h = legend('88,60 degrees fit','Corrected angles (85,58)','Experimental');
+h = legend('Corrected angles (85,58)','Experimental');
+h.FontSize = 14;
 h.FontWeight = 'bold';
-xlim([0 30])
+xlim([0 26])
 grid on
-title ('Mooney Rivlin fit','Fontweight','bold','fontsize',12)
-set(gca,'linewidth',2)
+title ('Mooney Rivlin fit (60,88)','Fontweight','bold','fontsize',12)
+set(gca,'linewidth',1.5,'FontSize',16,'fontweight','bold')
+xlabel('Pressure (in psi)','fontweight','bold','fontsize',20)
+ylabel('\lambda_1','fontweight','bold','fontsize',20)

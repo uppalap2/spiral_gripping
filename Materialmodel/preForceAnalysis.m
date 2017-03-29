@@ -4,35 +4,39 @@
 % This is input to angle detect which outputs final angle and mean angle
 % Get cylinder curvature and minimum length(L_min) needed check if L
 % >=L_min then add a 1 on the next row.
-function preForceAnalysis
+function result = preForceAnalysis
 clear all % needed 
-L = 44e-2; %%%%%%%CHANGE THIS
+L = 55e-2; %%%%%%%CHANGE THIS
 
-Pressure = 8:18;
-result_7088_26 = zeros(length(Pressure),5);
+Pressure = 8:24;
+result_6088_40 = zeros(length(Pressure),5);
+Eb = 7e5; %  (.6134) for 60 88 (.4386) for 70,88 (.6029) 50,88
+WpL = .0326; % .0332-50, .0326-60, .0345-70
 for i = 1:length(Pressure)
-    alpha = 86.6470*pi/180;%%%%%%%%CHANGE THIS
-    beta = 65.8020*pi/180;%%%%%%%%CHANGE THIS
+    alpha = 85*pi/180;%%%%%%%%CHANGE THIS
+    beta = 58*pi/180;%%%%%%%%CHANGE THIS
     
     fitmatFile = 'Material_fit_6088.mat'; %Material_fit_6088.mat Material_fit_7088.mat
     
-    initial_shape = getShapeGravity(Pressure(i), alpha , beta,fitmatFile,L);
+    initial_shape = getShapeGravity(Pressure(i), alpha , beta,fitmatFile,L,Eb,WpL);
     
-    plot3(initial_shape(:,1),initial_shape(:,2),initial_shape(:,3),'r');
+    plot3(initial_shape(:,1),initial_shape(:,2),-initial_shape(:,3),'c');
     axis equal
     grid on
+    hold on
     
     [TangVec, bias_angle] = angle_detect(initial_shape);
-    CylCurv = initial_shape(end,13)/(sind(TangVec(end)-bias_angle))^2;
-    MinLength = 2.5*pi*CylCurv^(-1)/sind(mean(TangVec)-bias_angle);
+    CylCurv = initial_shape(end,13)/(sind(TangVec(end)-bias_angle*0))^2;
+    MinLength = 2.5*pi*CylCurv^(-1)/sind(mean(TangVec)-bias_angle*0);
     check = MinLength>=L;
     
-    result_7088_26(i,:) = [L Pressure(i) CylCurv^(-1) MinLength check];%%%%%%%%CHANGE THIS
+    result_6088_45(i,:) = [L Pressure(i) CylCurv^(-1) MinLength check];%%%%%%%%CHANGE THIS
 end
 
-% save('C:\Users\Naveen\Box Sync\git\spiral_gripping\Materialmodel\prototypes\result_7088.mat'...
-%     ,'result_7088_26','-append'); % use append after first save only.%%%%%%%%CHANGE THIS
+% save('C:\Users\Naveen\Box Sync\git\spiral_gripping\Materialmodel\prototypes\result_5088_Eb.mat'...
+%     ,'result_5088_40','-append'); % use append after first save only.%%%%%%%%CHANGE THIS
 
+result  = result_6088_45;
 end
 
 
