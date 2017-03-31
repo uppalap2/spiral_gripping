@@ -1,6 +1,21 @@
 Introduction:
 
 Motivation:
+
+
+In nature we observe that long and slender objects are grasped by elephants, squids, octopus by curling their tentacles around
+the object of interest.
+
+
+
+
+Long and slender objects like wooden sticks, tube lights, long cylindrical pipes, cardboard tubes are few objects which are a bit
+tortous to grasp. Shifted center of mass creates large torques which is a reason for the difficulty in grasping these kind of objects. 
+Human hands use power grasp(refer cutkosky) to solve this problem (as shown in Fig 1a) where many distributed contact points are used for 
+a successful grasp. It is to be noted that human hand has phalanges which are dynamically controlled  to counter large torques . Looking
+to nature for a solution, we observe that long and slender objects (L/R >> 1)are grasped by elephants, squids, octopus by curling their 
+flexible organ (trunk/ tentacles) around the object. It is to be noted that they don't contain a rigid backbone. In industrial robots generally a set of grippers are used to grasp long and slender objects.
+
 In nature how does soft structures grasp long and slender objects.
 How is it done using Rigid robots? Rigid robots mostly are not adaptable
 What if the object is fragile? How will you grasp such a thing
