@@ -1,0 +1,34 @@
+Introduction:
+
+Motivation:
+
+Long and slender objects like wooden sticks, tube lights, cylindrical pipes, cardboard tubes are few objects which are a bit
+tortous to grasp. Shifted center of mass creates large torques which is a reason for the difficulty in grasping these kind of objects. 
+Human hands use power grasp(refer cutkosky) to solve this problem (as shown in Fig 1a) where many distributed contact points are used for 
+a successful grasp. It is to be noted that human hand has phalanges which are dynamically controlled  to counter large torques . Looking
+to nature for a solution, we observe that long and slender objects (L/R >> 1)are grasped by elephants, squids, octopus by curling their 
+flexible organ (trunk/ tentacles) around the object. It is to be noted that they don't contain a rigid backbone. In industrial robots 
+generally a set of end grippers are used to grasp long and slender objects as shown in Figure 1b. One of the limitation of use of a rigid 
+robot in general is that they are not adaptable to geometry and material of the object. In other words, they are designed to handle a fixed diameter of the object and moreover they exert same force for object of different materials varying from fragile to rigid materials,
+which may cause damage to less fragile objects. Soft robots which have been increasingly becoming popular(refer review of soft robotics from trivedi and cianchelli), their function of shape adaptability is one of the alternative to handle objects of varying geometry and stiffness. Although there are many soft grippers in the literature, they can handle long and slender objects only when they are in combinations as shown in Figure 1d. The motivation for this work is to investigate if we can replicate the use of soft structures in nature like elephant trunk and tentacles, especially to grasp long and slender objects.
+
+Related Work:
+
+Recently there have been a steep rise in work related to soft robots and soft grippers is one major application of these. Here we would report some representative examples. 
+Apparoach:
+
+
+
+
+
+
+
+
+
+
+In nature how does soft structures grasp long and slender objects.
+How is it done using Rigid robots? Rigid robots mostly are not adaptable
+What if the object is fragile? How will you grasp such a thing
+Hand grasping using power grasping, note that there is a rigid skeleton
+Waht if need only soft manipulator.?
+Using soft hands we need more than one and multi actuation
