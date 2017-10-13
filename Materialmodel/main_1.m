@@ -3,13 +3,13 @@
 
 
 % pressure curvature torsion
-pressure   = 18; % in psi
+pressure   = 14; % in psi
 
 alpha = 85*pi/180; beta = 58*pi/180;
 
-option = 2; % 1 for shape with gravity and 2 for grasping around a object
+option = 0; % 0 for shape without gravity ,1 for shape with gravity and 2 for grasping around a object
 
-L          = 55e-2;
+L          = 20e-2;
 gravity_on = 1;
 n_t_1      = 61;%51 for < 20 % 61 for 20
 n_f        = 41;%31 for < 20 % 61 for 20
@@ -33,7 +33,7 @@ delta = L.*Ro.^(-1).*cos(alpha).^3.*cos(beta).^3.*csc(alpha+(-1).*beta) ...
 
 curvature = (lambda1-1)/(2*Ro);
 torsion = -delta/L;
-
+init_g_value = 0; % intial guess value for force
 
 tic
                      
@@ -43,11 +43,11 @@ tic
                        gravity_on,...
                        n_t_1,...
                        n_f,...
-                       r_cyl,option);
+                       r_cyl,init_g_value,option);
                    
 toc
 
-if option == 1
+if option == 0 
     plot3(initial_shape(:,1),initial_shape(:,2),initial_shape(:,3),'r')
 else
     plot3(a(:,1),a(:,2),a(:,3),'r')

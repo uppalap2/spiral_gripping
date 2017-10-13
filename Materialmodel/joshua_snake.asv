@@ -1,0 +1,23 @@
+% Joshua snakes radius prediction
+
+alpha = 85*pi/180; beta = 58*pi/180; gamma = 0*pi/180 ;% in radians
+% load Material_fit_6088.mat
+% lambda1 = Material_fit(:,2);
+lambda1 = [  1.0250 1.0400 1.0700 1.1000 1.1450 1.2200 1.3000 1.4000];
+X = alpha/abs(alpha)*cos(beta)*sqrt(1-lambda1.^2.*cos(alpha)^2)...
+    - beta/abs(beta)*cos(alpha)*sqrt(1-lambda1.^2*cos(beta)^2);
+
+W = beta/abs(beta)*sin(alpha)*sqrt(1-lambda1.^2*cos(beta)^2)...
+    - alpha/abs(alpha)*sin(beta)*sqrt(1-lambda1.^2*cos(alpha)^2);
+r = .0048;
+
+rho = (r * lambda1 .* X)./(sin(alpha-beta).*lambda1...
+    - sqrt((sin(alpha-beta)*sec(gamma)).^2 - tan(gamma).^2*(tan(gamma).*X + W).^2));
+
+% plot(Material_fit(13:end,1), rho(13:end))
+% plot(Material_fit(Material_fit(:,1)>10 & Material_fit(:,1)< 24), rho(Material_fit(:,1)>10 & Material_fit(:,1)< 24)/2)
+plot(lambda1(4:end), rho)
+
+%% after running getshapegravity without gravity
+coeff = pca([shape(:,1), shape(:,2), shape(:,3)])
+

@@ -14,7 +14,7 @@ function [sxint,...
     % Make structure to pass around parameters more easily
     g   = 9.80665;
     Eb  = 7e5;
-    WpL = 0.0441;    % for 60, 88 actuator
+    WpL = 0.0326;    % for 60, 88 actuator
 
     dib = 0.0095; % inner dia
     dob = 0.013;  % outer dia

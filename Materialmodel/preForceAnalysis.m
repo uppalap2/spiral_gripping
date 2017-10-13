@@ -6,17 +6,17 @@
 % >=L_min then add a 1 on the next row.
 function result = preForceAnalysis
 clear all % needed 
-L = 55e-2; %%%%%%%CHANGE THIS
+L = 45e-2; %%%%%%%CHANGE THIS
 
-Pressure = 8:24;
-result_6088_40 = zeros(length(Pressure),5);
+Pressure = 8:18;
+result_5088_45 = zeros(length(Pressure),5);
 Eb = 7e5; %  (.6134) for 60 88 (.4386) for 70,88 (.6029) 50,88
-WpL = .0326; % .0332-50, .0326-60, .0345-70
+WpL = .0332; % .0332-50, .0326-60, .0345-70
 for i = 1:length(Pressure)
-    alpha = 85*pi/180;%%%%%%%%CHANGE THIS
-    beta = 58*pi/180;%%%%%%%%CHANGE THIS
+    alpha = 86.88*pi/180;%%%%%%%%CHANGE THIS
+    beta = 45.49*pi/180;%%%%%%%%CHANGE THIS
     
-    fitmatFile = 'Material_fit_6088.mat'; %Material_fit_6088.mat Material_fit_7088.mat
+    fitmatFile = 'Material_fit_5088.mat'; %Material_fit_6088.mat Material_fit_7088.mat
     
     initial_shape = getShapeGravity(Pressure(i), alpha , beta,fitmatFile,L,Eb,WpL);
     

@@ -1,0 +1,25 @@
+
+Pressures at which gripping onset and curling starts:
+
+
+
+RADIUS(cm)	50 degrees(in psi)	60 degrees(in psi)      Analysis (50)		Analysis (60)
+	     begin        Curling     Begin 	  Curling
+1) 1 	     17.4          21		18.8	   20.5		17.5			19.9
+2) 1.2	     16.5	  18.5-19       16.7       19		15.8			18.23
+3) 1.4       14.3         16.8          15.5       17.7		14.4			16.81
+4) 1.5       13.9         16.2          15.2       16.8		13.8			16.8
+5) 2         12            15           13.1       14.4		12			13.72	
+6) 2.5       -             -            11         12.5		X			12.1
+
+
+
+Workpiece lengths:
+1) Tubelight : 1.2 metre      (dia is 22mm)
+2) Plastic tube : .5 metre    (dia is 60 mm)
+
+
+Pressures for this objects: (70 degree prototype)
+
+Tubelight :  17.3 psi   20.5 psi
+60 mm tube : 11.8 psi  to 14.3 psi			

@@ -1,13 +1,15 @@
 close all
 
-lambda1 = [1.000:.01:1.3];
+lambda1 = [1.000:.01:1.2];
 
 
 
 
 
 
-        C1 = 0.6029 ; C2 =  0;% for corrected
+%         C1 = 0.6029 ; C2 =  0;% for corrected
+
+ C1 = 0.7873 ; C2 =  0;% for corrected% new experiments
 Pvslambda =  lambda1.^(-3).*(0.169803E3+(-0.1E1).*lambda1.^2+(-0.131042E2).*(4+ ...
   (-0.197768E1).*lambda1.^2+0.582345E-2.*lambda1.^4).^(1/2)).^(-2).* ...
   (0.228959E3+0.1E1.*lambda1.^4+(-0.74171E3).*(4+(-0.197768E1).* ...
@@ -41,14 +43,17 @@ hold on
 
 
 
-P_exp = [0:2:18];
-lambda1_exp =  [  1 1.0220 1.0330 1.0549 1.0769 1.1099 1.1209 1.1538 ...
-                    1.1978 1.2418];
+% P_exp = [0:2:18];
+% lambda1_exp =  [  1 1.0220 1.0330 1.0549 1.0769 1.1099 1.1209 1.1538 ...
+%                     1.1978 1.2418];
+
+lambda1_exp = [1 1.0490 1.0703 1.0935 1.1211];
+P_exp = [0 7.1 10 12.2 14.1];
 plot(P_exp,lambda1_exp,'ro:','linewidth',2)
 h = legend('Corrected angles (45,87)','Experimental');
 h.FontSize = 14;
 h.FontWeight = 'bold';
-xlim([0 max(P_exp)])
+xlim([0 max(Pvslambda*145.08)])
 grid on
 title ('Mooney Rivlin fit (50,88)','Fontweight','bold','fontsize',12)
 
