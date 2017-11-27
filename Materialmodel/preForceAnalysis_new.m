@@ -9,16 +9,16 @@ clear all % needed
 % clf
 L = 50e-2; %%%%%%%CHANGE THIS
 
-Pressure = 15;
-result_6088_45 = zeros(length(Pressure),7);
+Pressure = 10;
+result_6088_45 = zeros(length(Pressure),8);
 Eb = 7e5; %  (.6134) for 60 88 (.4386) for 70,88 (.6029) 50,88
-WpL = .0326; % .0332-50, .0326-60, .0345-70
+WpL = .0332; % .0332-50, .0326-60, .0345-70
 option =  1; % -0 w/o g -1 w g - 2 grasping
 for i = 1:length(Pressure)
-    alpha = 85*pi/180;%%%%%%%%CHANGE THIS
-    beta = 58*pi/180;%%%%%%%%CHANGE THIS
+    alpha = 87*pi/180;%%%%%%%%CHANGE THIS
+    beta = 46*pi/180;%%%%%%%%CHANGE THIS
     
-    fitmatFile = 'Material_fit_6088.mat'; %Material_fit_6088.mat Material_fit_7088.mat
+    fitmatFile = 'Material_fit_5088.mat'; %Material_fit_6088.mat Material_fit_7088.mat
     
     [initial_shape,lambda1] = getShapeGravity(Pressure(i), alpha , beta,fitmatFile,L,Eb,WpL,option);
     
@@ -29,10 +29,11 @@ for i = 1:length(Pressure)
 %     Microscribe_data_plots
     [TangVec] = angle_detect(initial_shape);
     CylCurv = initial_shape(end,13)/(sind(TangVec(end)))^2;
-    MinLength = 2.5*pi*CylCurv^(-1)/sind(mean(TangVec));
-    check = MinLength>=L;
+    MinLength_act = 2.5*pi*CylCurv^(-1)/sind(mean(TangVec));
+    MinLength_wp = 2.5*pi*CylCurv^(-1)/tand(mean(TangVec));
+    check = MinLength_act>=L;
     
-    result_6088_45(i,:) = [L Pressure(i) CylCurv^(-1) MinLength check TangVec(end) lambda1];%%%%%%%%CHANGE THIS
+    result_6088_45(i,:) = [L Pressure(i) CylCurv^(-1) MinLength_act MinLength_wp check TangVec(end) lambda1];%%%%%%%%CHANGE THIS
 end
 
 % save('C:\Users\Naveen\Box Sync\git\spiral_gripping\Materialmodel\prototypes\result_5088_Eb.mat'...

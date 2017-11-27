@@ -71,7 +71,7 @@ Pvslambda =  lambda1.^(-3).*(C2.*(0.645074E1+(-0.168523E-4).*lambda1.^12+ ...
   13/90).*pi)))).^(1/2)).^(-1).*(0.288411E0+(-0.42662E-2).* ...
   lambda1.^2+(-0.461855E-1).*((2+lambda1.^2.*((-1)+cos((1/18).*pi))) ...
   .*(2+lambda1.^2.*((-1)+sin((13/90).*pi)))).^(1/2)).^(-2);
-plot(-Pvslambda*145.08,lambda1,'g','linewidth',2)
+plot(-Pvslambda*145.08*6.89476,lambda1,'g','linewidth',2)
 Material_fit = [-Pvslambda'*145.08 lambda1'];
 save('Material_fit_6088.mat','Material_fit');
     otherwise
@@ -80,7 +80,7 @@ end
 end
 
 hold on
-P_exp = [0:3:24];
+P_exp = [0:3:24]*6.89476;
 lambda1_exp =  [1
     1.0250
     1.0400
@@ -90,14 +90,26 @@ lambda1_exp =  [1
     1.2200
     1.3000
     1.4000]';
-plot(P_exp,lambda1_exp,'go:','linewidth',2)
+% plot(P_exp,lambda1_exp,'go:','linewidth',2)
 % h = legend('88,60 degrees fit','Corrected angles (85,58)','Experimental');
-h = legend('Corrected angles (85,58)','Experimental');
-h.FontSize = 14;
-h.FontWeight = 'bold';
-xlim([0 26])
+% h = legend('Corrected angles (85,58)','Experimental');
+% h.FontSize = 14;
+% h.FontWeight = 'bold';
+% xlim([0 26])
+% grid on
+% title ('Mooney Rivlin fit (60,88)','Fontweight','bold','fontsize',12)
+% set(gca,'linewidth',1.5,'FontSize',16,'fontweight','bold')
+% xlabel('Pressure (in psi)','fontweight','bold','fontsize',20)
+% ylabel('\lambda_1','fontweight','bold','fontsize',20)
+plot(P_exp,lambda1_exp,'go:','linewidth',2)
+% h = legend('60 deg fit','60 deg Exp.');
+% h.FontSize = 12;
+% h.FontWeight = 'bold';
+xlim([0 max(abs(Pvslambda)*145.08*6.89476)])
 grid on
-title ('Mooney Rivlin fit (60,88)','Fontweight','bold','fontsize',12)
-set(gca,'linewidth',1.5,'FontSize',16,'fontweight','bold')
-xlabel('Pressure (in psi)','fontweight','bold','fontsize',20)
-ylabel('\lambda_1','fontweight','bold','fontsize',20)
+
+
+set(gca,'linewidth',2,'FontSize',12)
+
+xlabel('Pressure (in psi)','fontweight','bold','fontsize',12)
+ylabel('\lambda_1','fontweight','bold','fontsize',12)
