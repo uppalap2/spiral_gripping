@@ -2,133 +2,127 @@
 close all
 pressure_wog_60 = 12:24;
 Rcyl_wog_60 = [
-    0.5000   12.0000    0.0235    0.3550         0  148.6754    1.1262
-    0.5000   13.0000    0.0209    0.3193         0  149.0569    1.1396
-    0.5000   14.0000    0.0187    0.2885         0  149.4529    1.1537
-    0.5000   15.0000    0.0167    0.2618         0  149.8645    1.1685
-    0.5000   16.0000    0.0150    0.2383         0   29.7066    1.1841
-    0.5000   17.0000    0.0135    0.2174         0   29.2588    1.2005
-    0.5000   18.0000    0.0122    0.1987         0  151.2100    1.2178
-    0.5000   19.0000    0.0110    0.1818         0   28.2976    1.2363
-    0.5000   20.0000    0.0099    0.1665         0  152.2216    1.2559
-    0.5000   21.0000    0.0089    0.1524         0  152.7718    1.2771
-    0.5000   22.0000    0.0080    0.1394         0   26.6414    1.2999
-    0.5000   23.0000    0.0071    0.1272         0   26.0102    1.3248
-    0.5000   24.0000    0.0063    0.1157         0  154.6767    1.3523];
+    
+    0.5000   12.0000    0.0241    0.3489    0.2929         0   32.9026    1.1262
+    0.5000   13.0000    0.0215    0.3133   -0.2638         0  147.3253    1.1396
+    0.5000   14.0000    0.0193    0.2828    0.2387         0   32.4366    1.1537
+    0.5000   15.0000    0.0174    0.2562   -0.2168         0  147.8129    1.1685
+    0.5000   16.0000    0.0157    0.2328    0.1976         0   31.9250    1.1841
+    0.5000   17.0000    0.0142    0.2121   -0.1806         0  148.3510    1.2005
+    0.5000   18.0000    0.0128    0.1936    0.1653         0   31.3573    1.2178
+    0.5000   19.0000    0.0116    0.1769    0.1516         0   31.0476    1.2363
+    0.5000   20.0000    0.0105    0.1617   -0.1391         0  149.2826    1.2559
+    0.5000   21.0000    0.0095    0.1479   -0.1276         0  149.6369    1.2771
+    0.5000   22.0000    0.0086    0.1350   -0.1170         0  150.0200    1.2999
+    0.5000   23.0000    0.0077    0.1231   -0.1071         0  150.4386    1.3248
+    0.5000   24.0000    0.0069    0.1119   -0.0978         0  150.9022    1.3523];
 
-pressure_wg_60 = 12:24;
+
 Rcyl_wg_60 = [
-    0.5000   12.0000    0.0249    0.4518         0  147.6802    1.1262
-    0.5000   13.0000    0.0218    0.4032         0  148.3229    1.1396
-    0.5000   14.0000    0.0193    0.3535         0  148.9165    1.1537
-    0.5000   15.0000    0.0171    0.3059         0  149.4648    1.1685
-    0.5000   16.0000    0.0153    0.2677         0   30.0074    1.1841
-    0.5000   17.0000    0.0137    0.2406         0  150.5299    1.2005
-    0.5000   18.0000    0.0123    0.2180         0   28.9200    1.2178
-    0.5000   19.0000    0.0110    0.1950         0   28.3742    1.2363
-    0.5000   20.0000    0.0099    0.1753         0   27.8247    1.2559
-    0.5000   21.0000    0.0089    0.1599         0   27.2369    1.2771
-    0.5000   22.0000    0.0079    0.1443         0   26.6223    1.2999
-    0.5000   23.0000    0.0071    0.1306         0   25.9849    1.3248
-
-    0.5000   24.0000    0.0063    0.1182         0   25.2771    1.3523];
-
+    0.5000   12.0000    0.0254    0.4422   -0.3945         0  146.1041    1.1262
+    0.5000   13.0000    0.0224    0.3935   -0.3520         0  146.5976    1.1396
+    0.5000   14.0000    0.0199    0.3426   -0.3050         0  147.0319    1.1537
+    0.5000   15.0000    0.0178    0.2957   -0.2607         0  147.4154    1.1685
+    0.5000   16.0000    0.0159    0.2597   -0.2276         0  147.7786    1.1841
+    0.5000   17.0000    0.0143    0.2342   -0.2054         0  148.1511    1.2005
+    0.5000   18.0000    0.0129    0.2111    0.1851         0   31.4753    1.2178
+    0.5000   19.0000    0.0117    0.1882    0.1644         0   31.1184    1.2363
+    0.5000   20.0000    0.0105    0.1700    0.1484         0   30.7540    1.2559
+    0.5000   21.0000    0.0095    0.1546    0.1354         0   30.3559    1.2771
+    0.5000   22.0000    0.0086    0.1391    0.1217         0   29.9542    1.2999
+    0.5000   23.0000    0.0077    0.1264    0.1109         0   29.5229    1.3248
+    0.5000   24.0000    0.0069    0.1138    0.1000         0   29.0435    1.3523];
 
 
 
-
-figure 
-% plot(pressure_35, Rcyl_35(:,3),'r',pressure_40, Rcyl_40(:,3),'g',...
-%     pressure_45, Rcyl_45(:,3),'b',pressure_50, Rcyl_50(:,3),'c', 'linewidth',2)
-yyaxis left
-plot(pressure_wog_60*6.89476, Rcyl_wog_60(:,3)-.0048,':ko',...
-    pressure_wg_60*6.89476, Rcyl_wg_60(:,3)-.0048,':ks',...
-    'linewidth',1.5,'Markersize',8,'MarkerFaceColor','blue')
-
-yyaxis right
-plot(pressure_wog_60*6.89476, Rcyl_wog_60(:,4),':ko',...
-    pressure_wg_60*6.89476, Rcyl_wg_60(:,4),':ks',...
-    'linewidth',1.5,'Markersize',8,'MarkerFaceColor','red')
-xlabel('Pressure(in kPa)','fontweight','bold','fontsize',20)
-yyaxis left
-
-ylabel('Cylinder radius (in m)','fontweight','bold','fontsize',20)
-% grid on
-yyaxis right
-ylabel('Minimum length (in m)')
-legend('Helical', 'Exact ')
-set(gca,'linewidth',1.5,'FontSize',16)
-xlim([12 24]*6.89476)
-title('Pressure vs Cylinder radius for 60, 88 actuator','fontsize',20)
-grid on
-set(gcf, 'Position', [10, 10, 840, 600])
-% axis tight
-%% PLotting pressure vs diamters (50,88)
-close all
-clear all
-pressure_wog_50 = 10:20;
+pressure_wog_50 = 10:20;% 87 and 46
 Rcyl_wog_50 = [
-    0.5000   10.0000    0.0230    0.4482         0  156.2317    1.0756
-    0.5000   11.0000    0.0202    0.3986         0  156.5063    1.0845
-    0.5000   12.0000    0.0179    0.3571         0  156.7892    1.0936
-    0.5000   13.0000    0.0160    0.3219         0  157.0811    1.1031
-    0.5000   14.0000    0.0143    0.2916         0  157.3828    1.1129
-    0.5000   15.0000    0.0128    0.2653         0  157.6951    1.1231
-    0.5000   16.0000    0.0115    0.2421         0  158.0193    1.1337
-    0.5000   17.0000    0.0104    0.2215         0  158.3565    1.1447
-    0.5000   18.0000    0.0094    0.2030         0  158.7085    1.1563
-    0.5000   19.0000    0.0085    0.1863         0  159.0773    1.1684
-    0.5000   20.0000    0.0076    0.1711         0  159.4657    1.1812];
-
-pressure_wg_50 = 10:20;
-Rcyl_wg_50 = [   0.5000   10.0000    0.0248    0.6086    1.0000  155.2483    1.0756
-    0.5000   11.0000    0.0215    0.5015    1.0000  155.7426    1.0845
-    0.5000   12.0000    0.0188    0.4325         0  156.2092    1.0936
-    0.5000   13.0000    0.0165    0.3852         0  156.6579    1.1031
-    0.5000   14.0000    0.0146    0.3421         0  157.0791    1.1129
-    0.5000   15.0000    0.0131    0.3007         0  157.4610    1.1231
-    0.5000   16.0000    0.0117    0.2654         0  157.8373    1.1337
-    0.5000   17.0000    0.0105    0.2388         0  158.2200    1.1447
-    0.5000   18.0000    0.0095    0.2177         0  158.6239    1.1563
-    0.5000   19.0000    0.0085    0.1970         0   20.9707    1.1684
-    0.5000   20.0000    0.0077    0.1778         0   20.5704    1.1812
-];
+    0.5000   10.0000    0.0236    0.4454   -0.4051         0  155.4374    1.0756
+    0.5000   11.0000    0.0208    0.3959    0.3606         0   24.3726    1.0845
+    0.5000   12.0000    0.0185    0.3545    0.3234         0   24.1752    1.0936
+    0.5000   13.0000    0.0165    0.3194   -0.2918         0  156.0301    1.1031
+    0.5000   14.0000    0.0148    0.2892   -0.2647         0  156.2442    1.1129
+    0.5000   15.0000    0.0134    0.2629    0.2410         0   23.5320    1.1231
+    0.5000   16.0000    0.0121    0.2398    0.2202         0   23.2974    1.1337
+    0.5000   17.0000    0.0109    0.2193    0.2018         0   23.0507    1.1447
+    0.5000   18.0000    0.0099    0.2009    0.1852         0   22.7904    1.1563
+    0.5000   19.0000    0.0090    0.1843    0.1702         0   22.5143    1.1684
+    0.5000   20.0000    0.0081    0.1692   -0.1566         0  157.7802    1.1812];
 
 
+Rcyl_wg_50 = [       0.5000   10.0000    0.0261    0.6469   -0.6137    1.0000  154.0886    1.0756
+    0.5000   11.0000    0.0225    0.5292   -0.4988    1.0000  154.5883    1.0845
+    0.5000   12.0000    0.0196    0.4560   -0.4291         0  155.0338    1.0936
+    0.5000   13.0000    0.0173    0.4071   -0.3838         0  155.4399    1.1031
+    0.5000   14.0000    0.0153    0.3578   -0.3368         0  155.8075    1.1129
+    0.5000   15.0000    0.0137    0.3102   -0.2909         0  156.1398    1.1231
+    0.5000   16.0000    0.0123    0.2714   -0.2536         0  156.4528    1.1337
+    0.5000   17.0000    0.0111    0.2438   -0.2277         0  156.7685    1.1447
+    0.5000   18.0000    0.0100    0.2216    0.2072         0   22.9070    1.1563
+    0.5000   19.0000    0.0090    0.1991    0.1860         0   22.5852    1.1684
+    0.5000   20.0000    0.0082    0.1789    0.1670         0   22.2650    1.1812];
 
-figure 
-% plot(pressure_35, Rcyl_35(:,3),'r',pressure_40, Rcyl_40(:,3),'g',...
-%     pressure_45, Rcyl_45(:,3),'b',pressure_50, Rcyl_50(:,3),'c', 'linewidth',2)
-yyaxis left
-plot(pressure_wog_50*6.89476, Rcyl_wog_50(:,3)-.0048,':ko',...
-    pressure_wg_50*6.89476, Rcyl_wg_50(:,3)-.0048,':ks',...
+
+
+
+plot(pressure_wog_50*6.89476, Rcyl_wog_50(:,3)-.0048,'-ko',...
+    pressure_wog_60*6.89476, Rcyl_wog_60(:,3)-.0048,'-ks',...
     'linewidth',1.5,'Markersize',8,'MarkerFaceColor','blue')
 % %plot(pressure_wog_60*6.89476, Rcyl_wog_60(:,3)-.0048,'ko',...
 %     pressure_wg_60*6.89476, Rcyl_wg_60(:,3)-.0048,'ks',...
 %     'linewidth',1.5,'Markersize',8,'MarkerFaceColor','blue')
+hold on
 
-yyaxis right
-
-plot(pressure_wog_50*6.89476, Rcyl_wog_50(:,4),':ko',...
-    pressure_wg_50*6.89476, Rcyl_wg_50(:,4),':ks',...
+plot(pressure_wog_50*6.89476, Rcyl_wg_50(:,3)-.0048,'--ko',...
+    pressure_wog_60*6.89476, Rcyl_wg_60(:,3)-.0048,'--ks',...
     'linewidth',1.5,'Markersize',8,'MarkerFaceColor','red')
 
-yyaxis left
-ylabel('Cylinder radius (in m)','fontweight','bold','fontsize',20)
+ylabel('r_{wp} (in m)','fontweight','bold','fontsize',12,'Interpreter','tex')
 
-yyaxis right
-ylabel('Minimum length (in m)','fontweight','bold','fontsize',20)
+xlabel('Pressure(in kPa)','fontweight','bold','fontsize',12)
 
-xlabel('Pressure(in kPa)','fontweight','bold','fontsize',20)
-
-set(gca,'linewidth',1.5,'FontSize',16)
-xlim([10 20]*6.89476)
+set(gca,'linewidth',2,'FontSize',12)
+xlim([10 24]*6.89476)
 grid on
-title('Pressure vs Cylinder radius for 50, 88 actuator','fontsize',20)
-set(gcf, 'Position', [10, 10, 840, 600])
-legend('Helical', 'Exact ')
+ax = gca;
+ax.YAxis.Exponent = -2;
+
+% set(gcf, 'Position', [100, 100, 600, 600])
+legend(' 50 deg Helical', '60 deg Helical ',' 50 deg Exact', '60 deg Exact ')
+axis square
+resol = 900; % pixels per inch
+set(gcf, 'Position', [100, 100, 600, 600])
+% legend(' 50 deg Helical', '60 deg Helical ',' 50 deg Exact', '60 deg Exact ')
+
+%
+figure
+
+plot(pressure_wog_50*6.89476,abs( Rcyl_wog_50(:,5)),'-ko',...
+    pressure_wog_60*6.89476, abs(Rcyl_wog_60(:,5)),'-ks',...
+    'linewidth',1.5,'Markersize',8,'MarkerFaceColor','blue')
+% %plot(pressure_wog_60*6.89476, Rcyl_wog_60(:,3)-.0048,'ko',...
+%     pressure_wg_60*6.89476, Rcyl_wg_60(:,3)-.0048,'ks',...
+%     'linewidth',1.5,'Markersize',8,'MarkerFaceColor','blue')
+hold on
+
+plot(pressure_wog_50*6.89476,abs(Rcyl_wg_50(:,5)),'--ko',...
+    pressure_wog_60*6.89476, abs(Rcyl_wg_60(:,5)),'--ks',...
+    'linewidth',1.5,'Markersize',8,'MarkerFaceColor','red')
+
+ylabel('l_{wp} (in m)','fontweight','bold','fontsize',12,'Interpreter','tex')
+
+xlabel('Pressure(in kPa)','fontweight','bold','fontsize',12)
+
+set(gca,'linewidth',2,'FontSize',12)
+xlim([10 24]*6.89476)
+grid on
+ax = gca;
+ax.YAxis.Exponent = -2;
+
+set(gcf, 'Position', [100, 100, 600, 600])
+legend(' 50 deg Helical', '60 deg Helical ',' 50 deg Exact', '60 deg Exact ')
 %% PLotting pressure vs diamters (70,88)
-close all
+
 close all
 pressure_wog = 10:20;
 
@@ -150,44 +144,53 @@ Rcyl_wg_70(:,2)=Rcyl_wg_70(:,2)*6.89476;
 
 
 figure 
-% plot(pressure_35, Rcyl_35(:,3),'r',pressure_40, Rcyl_40(:,3),'g',...
-%     pressure_45, Rcyl_45(:,3),'b',pressure_50, Rcyl_50(:,3),'c', 'linewidth',2)
-yyaxis left
-plot(pressure_wg_70, Rcyl_wg_70(:,3),':ko',...
-    'linewidth',1.5,'Markersize',8,'MarkerFaceColor','blue')
+
+plot(pressure_wg_70, Rcyl_wg_70(:,3),'--ko',...
+    'linewidth',2,'Markersize',8,'MarkerFaceColor','blue')
 
 
-hold on
-yyaxis right
-plot(pressure_wg_70, Rcyl_wg_70(:,4),':ko',...
-    'linewidth',1.5,'Markersize',8,'MarkerFaceColor','red')
-yyaxis left
-ylabel('Cylinder radius (in m)','fontweight','bold','fontsize',20)
+ylabel('r_{obj} (in m)','fontweight','bold','fontsize',12,'Interpreter','tex')
 
-yyaxis right
-ylabel('Minimum length (in m)','fontweight','bold','fontsize',20)
 
-xlabel('Pressure(in kPa)','fontweight','bold','fontsize',20)
+xlabel('Pressure(in kPa)','fontweight','bold','fontsize',12)
 
-set(gca,'linewidth',1.5,'FontSize',16)
-xlim([10 20]*6.89476)
+set(gca,'linewidth',2,'FontSize',12)
+xlim([10 21]*6.89476)
 grid on
-title('Pressure vs Cylinder radius for 70, 88 actuator','fontsize',20)
-set(gcf, 'Position', [10, 10, 840, 600])
-% 
-yyaxis left
+hold on
+set(gcf, 'Position', [100, 100, 600, 600])
 % ploting the test objects
 
- 
-plot(136.6416,.0110,'kh','Markersize',14,'MarkerFaceColor','green')
-hold on
-plot(75.8424,.0300,'kh','Markersize',14,'MarkerFaceColor','cyan')
- 
-
-
-plot([75.8424-.2*6.89476 75.8424+2.3*6.89476],[.03 .03],'--c','LineWidth',2)
-plot([136.6416-2.5*6.89476 136.6416+.7*6.89476],[.011 .011],'--g','LineWidth',2)
-legend('Radius','Tubelight','Pipe','Range (Pipe)','Range (Tubelight)','min length')
+%  
+% plot(136.6416,.0110,'kh','Markersize',14,'MarkerFaceColor','green')
+% hold on
+% plot(75.8424,.0300,'kh','Markersize',14,'MarkerFaceColor','cyan')
+%  
+Pobj = [75.284 136.6416];
+Robj = [.03 .011];
+xneg = [-.6*6.89476 -2.5*6.89476];
+xpos = [2.1*6.89476 1*6.89476];
+plot(Pobj(1),Robj(1),'kd','MarkerFaceColor','red','MarkerSize',10);
+plot(Pobj(2),Robj(2),'kd','MarkerFaceColor','green','MarkerSize',10);
+e1 = errorbar(Pobj(1),Robj(1),xneg(1),xpos(1),'horizontal','k');
+e1.Marker = '.';
+e1.MarkerSize = 8;
+e1.MarkerFaceColor = 'red';
+e1.CapSize = 12;
+e1.LineStyle = '-';
+e1.LineWidth = 2;
+e1.Color = 'red';
+e2 = errorbar(Pobj(2),Robj(2),xneg(2),xpos(2),'horizontal','k');
+e2.Marker = '.';
+e2.MarkerSize = 8;
+e2.MarkerFaceColor = 'green';
+e2.CapSize = 12;
+e2.LineStyle = '-';
+e2.LineWidth = 2;
+e2.Color = 'green';
+legend('Analytical rad','Pipe Anal','Tubelight Anal','Pipe(Exp)','Tubelight(Exp)');
+ax = gca;
+ax.YAxis.Exponent = -2;
 %%
 
 % Plots for exp pressure vs analytical for gripping
@@ -204,33 +207,36 @@ P_50_E_pos = [3.5 2.7 2.4 2.4 3 NaN]*6.89476;
 P_60_E_neg = [1.1 1.53 1.3 .98 .62 1.1]*6.89476;
 P_60_E_pos = [.6 .7 .9 .62 .68 .4]*6.89476;
 
-e1= errorbar(radius,P_50_A,P_50_E_neg,P_50_E_pos,'ko','MarkerFaceColor','red');
-e1.Marker = 'o';
+e1= errorbar(P_50_A(1:5),radius(1:5),P_50_E_neg(1:5),P_50_E_pos(1:5),'horizontal','ks','MarkerFaceColor','red');
+e1.Marker = '.';
 e1.MarkerSize = 10;
-e1.Color = 'red';
-e1.CapSize = 15;
-e1.LineStyle = ':';
+e1.MarkerFaceColor = 'blue';
+e1.CapSize = 1\20;
 e1.LineWidth = 2;
+e1.Color = 'blue';
 hold on
-e2 = errorbar(radius,P_60_A,P_60_E_neg,P_60_E_pos,'ks','MarkerFaceColor','blue');
-e2.Marker = 's';
+e2 = errorbar(P_60_A,radius,P_60_E_neg,P_60_E_pos,'horizontal','ko','MarkerFaceColor','blue');
+e2.Marker = '.';
 e2.MarkerSize = 10;
-e2.Color = 'blue';
+e2.MarkerFaceColor = 'red';
 e2.CapSize = 15;
-e2.LineStyle = '--';
 e2.LineWidth = 2;
-
-xlim([.008 .028])
-ylim([10 22]*6.89476)
+e2.Color = 'red';
+plot(P_50_A(1:5),radius(1:5),'ks','MarkerFaceColor','blue','MarkerSize',10)
+plot(P_60_A,radius,'ko','MarkerFaceColor','red','MarkerSize',10)
+ylim([.008 .028])
+xlim([10 22]*6.89476)
 grid on
-title('Pressure needed to grip various diameters','fontsize',20)
-xlabel('Radius (in m)','fontweight','bold','fontsize',20)
 
-ylabel('Pressure(in kPa)','fontweight','bold','fontsize',20)
+ylabel('r_{obj} (in m)','fontweight','bold','fontsize',12,'Interpreter','tex')
 
-set(gca,'linewidth',1.5,'FontSize',16)
-set(gcf, 'Position', [10, 10, 840, 600])
-legend('50 deg','60 deg')
+xlabel('Pressure(in kPa)','fontweight','bold','fontsize',12)
+
+set(gca,'linewidth',2,'FontSize',12)
+set(gcf, 'Position', [100, 100, 600, 600])
+legend('50 deg (Exp)','60 deg (Exp)','50 deg (Anal)','60 deg (Anal)')
+ax = gca;
+ax.YAxis.Exponent = -2;
 
 % %% Plots for exp pressure vs analytical for gripping
 % clear all
