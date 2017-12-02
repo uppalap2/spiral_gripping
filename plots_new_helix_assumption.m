@@ -212,8 +212,12 @@ load_40 = [ 275 475 975 1075 1275];
 Pressure_30 = [15:1:22]*6.89476;
 load_30 = [40 200 400 700 800 900 950 1050];
 
-plot(Pressure_40,load_40,'r--',Pressure_30,load_30,'b--','Linewidth',2)
+% plot(Pressure_40,load_40,'r*',Pressure_30,load_30,'b*','Linewidth',2)
+
+h1 = plot(Pressure_40,load_40,'ro','MarkerFaceColor', 'r')
+hold on
 grid on
+h2 = plot(Pressure_30,load_30,'bo','MarkerFaceColor', 'b')
 set(gca,'linewidth',2,'FontSize',12)
 legend('20 mm', '15 mm')
 xlabel('Pressure (in kPa)','fontweight','bold','fontsize',12)
