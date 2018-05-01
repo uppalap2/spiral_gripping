@@ -114,7 +114,7 @@ ratio1_55 = (-0.15708E2).*(4.*((-1)+lambda1).^2.*(1+lambda1).^(-2)+(2.^( ...
   1/2).*((-1).*cos(alpha).^2.*((-2)+lambda1.^2+lambda1.^2.*cos(2.* ...
   alpha))).^(1/2).*sec(alpha).^2+(-2).*tan(alpha));
 
-lambda1 = [1.15:.02:1.39 1.40];
+lambda1 = [1.15:.01:1.39 1.40];
 
 alpha = angles(3:end)'*pi/180;
 
@@ -171,7 +171,7 @@ ratio2_55 = 0.314159E2.*((-1)+lambda1).*(1+lambda1).^(-1).*(1+(1/4).*((-1)+ ...
   lambda1.^2+lambda1.^2.*cos(2.*alpha))).^(1/2).*sec(alpha).^2+(-2) ...
   .*tan(alpha)).^2).^(-1);
 
-lambda1 = [1.15:.02:1.39 1.40];
+lambda1 = [1.15:.01:1.39 1.40];
 
 alpha = angles(3:end)'*pi/180;
 
@@ -205,7 +205,8 @@ set(get(get(h2,'Annotation'),'LegendInformation'),'IconDisplayStyle','off');
 
 
 %% Plots for load versus pressure 
-
+clear all
+clf
 Pressure_40 = [12:2:20]*6.89476;
 load_40 = [ 275 475 975 1075 1275];
 
